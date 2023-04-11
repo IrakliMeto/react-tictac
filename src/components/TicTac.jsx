@@ -62,6 +62,7 @@ export const TicTac = () => {
   const winner = gameStatus === "X" || gameStatus === "O";
   const draw = gameStatus === "Draw";
   const whoPlays = !winner && !draw;
+  const active = list.includes("X" || "O");
 
   const resetGame = () => {
     if (list.every((item) => item === null)) return;
@@ -72,6 +73,15 @@ export const TicTac = () => {
   return (
     <div className="tictac">
       <div className="header">
+        <button
+          onClick={() => {
+            resetGame();
+          }}
+          className={`reset ${active ? "reset--active" : ""}`}
+        >
+          Reset Game
+        </button>
+
         {whoPlays && (
           <h1 className="title">
             Player: <span>{player}</span>
@@ -102,15 +112,6 @@ export const TicTac = () => {
           </div>
         ))}
       </div>
-
-      <button
-        onClick={() => {
-          resetGame();
-        }}
-        className="reset"
-      >
-        Reset Game
-      </button>
     </div>
   );
 };
