@@ -73,15 +73,6 @@ export const TicTac = () => {
   return (
     <div className="tictac">
       <div className="header">
-        <button
-          onClick={() => {
-            resetGame();
-          }}
-          className={`reset ${active ? "reset--active" : ""}`}
-        >
-          Reset Game
-        </button>
-
         {whoPlays && (
           <h1 className="title">
             Player: <span>{player}</span>
@@ -97,6 +88,15 @@ export const TicTac = () => {
             Game Is: <span>{gameStatus}</span>
           </div>
         )}
+
+        <button
+          onClick={() => {
+            resetGame();
+          }}
+          className={`reset ${active ? "reset--active" : ""}`}
+        >
+          Reset Game
+        </button>
       </div>
 
       <div className="container">
