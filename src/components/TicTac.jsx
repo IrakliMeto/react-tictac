@@ -62,11 +62,12 @@ export const TicTac = () => {
   const winner = gameStatus === "X" || gameStatus === "O";
   const draw = gameStatus === "Draw";
   const whoPlays = !winner && !draw;
-  const active = list.includes("X" || "O");
+  const active = list.includes("X") || list.includes("O");
 
   const resetGame = () => {
     if (list.every((item) => item === null)) return;
     setList([null, null, null, null, null, null, null, null, null]);
+    setPlayer(player === "X" ? "O" : "X");
     setGameStatus("");
   };
 
