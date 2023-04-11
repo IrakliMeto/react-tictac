@@ -12,6 +12,7 @@ const winningCombinations = [
   [3, 4, 5],
   [6, 7, 8],
 ];
+
 export const TicTac = () => {
   const [list, setList] = useState([
     null,
